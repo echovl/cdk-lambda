@@ -28,6 +28,7 @@ export class BgRemoverStack extends cdk.Stack {
                 environment: {
                     BUCKET: bucket.bucketName,
                     ENV: "production",
+                    TRANSFORMERS_CACHE: "/tmp/data",
                 },
             }
         )

@@ -1,21 +1,13 @@
 import json
-import os
 
-import torch
-
-
-def is_production() -> bool:
-    env = os.getenv("ENV")
-    return env != None and env == "production"
+from whisper import Whisper
 
 
 def lambda_handler(event, context):
-    resp = {"msg": "Hello from lambda2"}
+    whisper = Whisper()
+    transcript = whisper.transcribe("https://dl.sndup.net/fq8z/audio.mp3")
 
-    print(os.getenv("ENV"))
-
-    rand = torch.rand(5, 3)
-
-    print(rand)
-
-    return {"statusCode": 200, "headers": {}, "body": json.dumps(resp)}
+    return {
+        "statusCode": 200,
+        "body": json.dumps(transcript),
+    }
