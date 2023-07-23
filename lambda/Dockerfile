@@ -1,8 +1,8 @@
 FROM public.ecr.aws/lambda/python:3.8
 
-# COPY requirements.txt ./
+COPY requirements.txt ./
 
-# RUN python3.8 -m pip install -r requirements.txt
+RUN python3.8 -m pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
 
 COPY app.py ./
 
