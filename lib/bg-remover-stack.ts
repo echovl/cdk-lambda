@@ -14,7 +14,7 @@ export class BgRemoverStack extends cdk.Stack {
         const repository = ecr.Repository.fromRepositoryName(
             this,
             "BgRemoverRepository",
-            "BgRemover"
+            "bg-remover"
         )
 
         const lambdaFn = new lambda.DockerImageFunction(
