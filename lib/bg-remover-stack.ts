@@ -23,6 +23,7 @@ export class BgRemoverStack extends cdk.Stack {
             {
                 functionName: "BgRemover",
                 code: lambda.DockerImageCode.fromEcr(repository),
+                memorySize: 3000,
                 timeout: cdk.Duration.minutes(10),
                 environment: {
                     BUCKET: bucket.bucketName,

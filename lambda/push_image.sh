@@ -2,7 +2,7 @@
 
 AWS_REGION=us-east-1
 AWS_ACCOUNT_ID=029047628564
-REPOSITORY=bg-remover
+REPOSITORY=BgRemover
 LAMBDA=BgRemover
 
 aws ecr get-login-password --region $AWS_REGION \
